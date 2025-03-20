@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para Mi Amor ❤️</title>
+  <link rel="stylesheet" href="estilo.css" />
+</head>
+<body>
+
+  <!-- Pantalla de carga -->
+  <div id="loading-screen">
+    <div id="loading-content">
+      <span id="initials">G</span> <!-- Coloca la inicial de tu novia aquí -->
+      <div class="hearts">
+        ❤️❤️❤️❤️❤️❤️
+      </div>
+    </div>
+  </div>
+
+  <header>
+    <h1>Feliz primer mes  mi amor 💕</h1>
+    <p>Un pequeño detalle hecho con mucho cariño solo para ti.</p>
+  </header>
+
+  <section class="gallery">
+    <h2>Nuestros Momentos ✨</h2>
+    <div class="photos">
+      <img src="imagenes/foto1.jpg" alt="Foto juntos">
+      <img src="imagenes/foto2.jpg" alt="Foto linda">
+      <img src="imagenes/foto3.jpg" alt="Recuerdo bonito">
+    </div>
+  </section>
+
+  <section class="poems">
+    <h2>Poemas para ti 🌹</h2>
+    <div class="carousel">
+      <div class="carousel-inner" id="carousel-inner">
+        <div class="poem">
+          <p>Eres la razón de mis sonrisas,<br>La calma en mis días grises,<br>Mi luz, mi paz y mi alegría,<br>Contigo todo es poesía.</p>
+        </div>
+        <div class="poem">
+          <p>En cada latido, te encuentro,<br>En cada suspiro, estás tú,<br>Eres mi cielo completo,<br>Mi principio y mi virtud.</p>
+        </div>
+        <div class="poem">
+          <p>Tu risa ilumina el día,<br>Tu mirada es mi hogar,<br>En tu abrazo se detiene,<br>Todo el mundo sin dudar.</p>
+        </div>
+        <div class="poem">
+          <p>Contigo el tiempo es eterno,<br>Contigo la vida es paz,<br>Te amo más de lo que digo,<br>Mucho más de lo que verás.</p>
+        </div>
+        <div class="poem">
+          <p>Cuando pienso en el futuro,<br>Solo contigo es ideal,<br>No hay nadie más en mi mundo,<br>Eres amor sin final.</p>
+        </div>
+        <div class="poem">
+          <p>Como un susurro en la brisa,<br>Como un beso sin final,<br>Así eres tú en mi vida,<br>Mi razón para soñar.</p>
+        </div>
+        <div class="poem">
+          <p>Eres sol en la tormenta,<br>Mi refugio, mi verdad,<br>En tus ojos se refleja,<br>La más pura felicidad.</p>
+        </div>
+        <div class="poem">
+          <p>Si pudiera darte todo,<br>Te daría mi existir,<br>Porque amarte es mi tesoro,<br>Es mi forma de vivir.</p>
+        </div>
+        <div class="poem">
+          <p>No hace falta luna llena,<br>Ni estrellas en el cielo,<br>Con tenerte aquí cerquita,<br>Ya tengo el universo entero.</p>
+        </div>
+        <div class="poem">
+          <p>Gracias por cada momento,<br>Gracias por cada mirar,<br>Mi amor por ti es infinito,<br>¡Nunca se va a acabar!</p>
+        </div>
+      </div>
+      <button class="prev" onclick="prevPoem()">⟨</button>
+      <button class="next" onclick="nextPoem()">⟩</button>
+    </div>
+  </section>
+
+  <section class="phrases">
+    <h2>Frases bonitas 💌</h2>
+    <ul>
+      <li>“Contigo cada momento es un regalo.”</li>
+      <li>“Mi lugar favorito siempre será a tu lado.”</li>
+      <li>“Eres mi casualidad más bonita.”</li>
+    </ul>
+  </section>
+
+  <section class="music">
+    <h2>Nuestra canción 🎶</h2>
+    <audio id="player" controls autoplay loop>
+      <source id="audioSource" src="music/tu-cancion.mp3" type="audio/mpeg" />
+      Tu navegador no soporta audio :(
+    </audio>
+  </section>
+
+  <section class="playlist">
+    <h2>Elige una canción ❤️</h2>
+    <ul>
+      <li onclick="changeSong('music/tu-cancion.mp3', 'fondo/fondo2.jpg')">❤️ Nuestra canción</li>
+      <li onclick="changeSong('music/cancion2.mp3', 'fondo/fondo3.jpg')">❤️ La que me recuerda a ti</li>
+      <li onclick="changeSong('music/cancion3.mp3', 'fondo/fondo4.jpg')">❤️ Nuestro primer día</li>
+    </ul>
+  </section>
+
+
+  
+
+  <footer>
+    <p>Te amo mucho ❤️</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
