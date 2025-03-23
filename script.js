@@ -1,29 +1,25 @@
-// Esperar 3 segundos para cargar el contenido después de que se muestre la pantalla de carga
-window.onload = function() {
-    setTimeout(function() {
-      // Ocultar la pantalla de carga después de 3 segundos
-      document.getElementById("loading-screen").style.opacity = 0;
-      setTimeout(function() {
-        document.getElementById("loading-screen").style.display = "none";
-      }, 1000); // Tiempo de desvanecimiento de la pantalla de carga
-    }, 3000); // Duración de la pantalla de carga (en milisegundos)
-  };
-  
-  // Funciones para cambiar las canciones y fondos
-  function changeSong(song, background) {
-    document.getElementById('audioSource').src = song;
-    document.getElementById('player').load();
-    document.body.style.backgroundImage = `url(${background})`;
-  }
-  
-  // Funciones para cambiar de poema en el carrusel
-  function nextPoem() {
-    let carouselInner = document.getElementById('carousel-inner');
-    carouselInner.style.transform = 'translateX(-100%)';
-  }
-  
-  function prevPoem() {
-    let carouselInner = document.getElementById('carousel-inner');
-    carouselInner.style.transform = 'translateX(0%)';
-  }
-  
+document.addEventListener("DOMContentLoaded", function () {
+    var map = L.map('map').setView([19.8302, -90.5349], 12); // Centro de Campeche
+
+    // Cargar capa de OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Obtener sitios arqueológicos desde PHP
+    fetch('sitios.php')
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(sitio => {
+                L.marker([sitio.latitud, sitio.longitud])
+                    .addTo(map)
+                    .bindPopup(`<b>${sitio.nombre}</b><br>${sitio.descripcion}`);
+            });
+        })
+        .catch(error => console.log('Error al cargar sitios:', error));
+});
+
+// Cambiar el modo de recorrido (opcional)
+function cambiarModo(modo) {
+    alert("Modo cambiado a: " + modo);
+}
